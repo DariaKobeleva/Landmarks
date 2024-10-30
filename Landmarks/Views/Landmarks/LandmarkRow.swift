@@ -17,14 +17,19 @@ struct LandmarkRow: View {
             Text(landMark.name)
             
             Spacer()
+            
+            if landMark.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundStyle(.yellow)
+            }
         }
     }
 }
 
 #Preview("Turtle Rock") {
     Group {
-        LandmarkRow(landMark: landmarks[0])
-        LandmarkRow(landMark: landmarks[1])
+        LandmarkRow(landMark: ModelData().landmarks[0])
+        LandmarkRow(landMark: ModelData().landmarks[1])
     }
 
 }
